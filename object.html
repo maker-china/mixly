@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script type="text/javascript">
+function Person(name,age,job)
+{
+    this.name=name;
+    this.age=age;
+    this.job=job;
+    this.friends=["James","Martin"];
+}
+Person.prototype.sayFriends=function()
+{
+    alert(this.friends);
+};
+function createPerson(name, age,job)
+{
+    var o = new Object();
+    o.name=name;
+    o.age=31;
+    o.job=job;
+    o.sayName=function() {
+        alert(this.name);
+    };
+    return o;
+}
+
+var person1 = new Person("kevin",31,"SE");
+var person2 = new Person("Tom",30,"SE");
+var person3 = createPerson("Bob",30,"SE");
+person1.friends.push("Joe");
+console.log(person1);
+console.log(person2);
+console.log(person3);
+person1.sayFriends();//Jams,Martin,Joe
+person2.sayFriends();
+person3.sayName();//Jams,Martin
+	</script>
+</head>
+<body>
+
+</body>
+</html>

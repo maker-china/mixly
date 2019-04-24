@@ -1,0 +1,1 @@
+Blockly.MIXLY_FULAOSHI_666="Boss Fu is shouting 666";

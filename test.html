@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script Language="JavaScript">
+var msg="这是一个跑马灯效果的JavaScript文档";
+var interval = 100;
+var spacelen = 22;
+var space10=" ";
+var seq=0;
+var len = msg.length;
+var newscroll=function () { 
+	document.getElementById("test").innerHTML = msg.substring(0, seq);
+	seq++;
+	if ( seq > len )
+		window.setTimeout("Scroll2();", interval);
+	else 
+		window.setTimeout("newscroll();", interval );
+} 
+function Scroll2() {
+document.getElementById("test").innerHTML = msg.substring(0, seq);
+seq--;
+if (seq>=0)
+window.setTimeout("Scroll2();", interval);
+else
+window.setTimeout("newscroll();", interval);
+}
+</script>
+</head>
+<body>
+<div id="test"></div>
+<button onclick="newscroll();">执行</button>
+</body>
+</html> 
